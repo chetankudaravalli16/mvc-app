@@ -20,7 +20,7 @@ router.get('/index', (req, res, next) => {
   res.render('index', { title: 'MVC' })
 })
 
-// Route requests that start with '/dev' to a particular controller
+// Route requests that start with '/developer' to a particular controller
 router.use('/developer', require('../controllers/developer.js'))
 
 // catch 404 and forward to error handler
