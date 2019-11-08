@@ -8,41 +8,41 @@ const DeveloperSchema = new mongoose.Schema({
   SectionNumber: {
     type: String,
     minlength: 0,
-    maxlength: 10,
+    maxlength: 2,
     required: true,
     default: 'Section Number'
   },
   Days: {
     type: String,
     minlength: 1,
-    maxlength: 10,
+    maxlength: 7,
     required: true,
     default: 'Days'
   },
   StartTime: {
-    type: String,
+    type: Number,
     minlength: 0,
-    maxlength: 10,
+    maxlength: 30,
     required: true,
-    default: 'Start Time'
+    default: 'StartTime'
   },
   RoomNumber: {
     type: String,
     minlength: 0,
-    maxlength: 10,
+    maxlength: 30,
     required: true
   },
   InstructorId: {
     type: String,
     minlength: 0,
-    maxlength: 10,
+    maxlength: 30,
     required: true
 
   },
   CourseId: {
     type: String,
     minlength: 0,
-    maxlength: 10,
+    maxlength: 30,
     required: true
   }
 })

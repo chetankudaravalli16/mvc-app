@@ -8,21 +8,21 @@ const DeveloperSchema = new mongoose.Schema({
   Given: {
     type: String,
     minlength: 0,
-    maxlength: 35,
+    maxlength: 30,
     required: true,
     default: 'Given Name'
   },
   Family: {
     type: String,
     minlength: 0,
-    maxlength: 35,
+    maxlength: 30,
     required: true,
     default: 'Family Name'
   },
   Email: {
     type: String,
     minlength: 5,
-    maxlength: 120,
+    maxlength: 100,
     required: true,
     unique: true
   },
@@ -33,21 +33,21 @@ const DeveloperSchema = new mongoose.Schema({
   GitHub: {
     type: String,
     minlength: 0,
-    maxlength: 35,
+    maxlength: 30,
     required: true
 
   },
   Website: {
     type: String,
     minlength: 0,
-    maxlength: 40,
+    maxlength: 30,
     required:true
 
   },
   SectionId: {
     type: Number,
     minlength: 0,
-    maxlength: 40,
+    maxlength: 30,
     required:true
 
   }

@@ -1,29 +1,19 @@
-/**
-*  Developer controller
-*  Handles requests related to developer resources.
-*
-* 
-* @author Pranay Allikanti <s536880@nwmissouri.edu>
-*
-*/
+
 const express = require('express')
 const api = express.Router()
-const Model = require('../models/student.js')
 
 const find = require('lodash.find')
+
 const notfoundstring = 'Could not find student with id='
 
-// RESPOND WITH JSON DATA  --------------------------------------------
-
-// GET all JSON
-api.get('/findall', (req, res) => {
+api.get('/findallstudents', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.students.query
   res.send(JSON.stringify(data))
 })
 
-// GET one JSON by ID
-api.get('/findone/:id', (req, res) => {
+
+api.get('/findonestudent/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.students.query
@@ -32,20 +22,19 @@ api.get('/findone/:id', (req, res) => {
   res.send(JSON.stringify(item))
 })
 
-//RESPOND WITH VIEWS  --------------------------------------------
 
-//GET to this controller base URI (the default)
+// GET to this controller base URI (the default)
 api.get('/', (req, res) => {
-  res.render('developer/index.ejs', {
-    developers: req.app.locals.students.query
+  res.render('student/index.ejs', {
+    students: req.app.locals.students.query
   })
 })
 
 // GET create
 api.get('/create', (req, res) => {
-  res.render('developer/create', {
-    developers: req.app.locals.students.query,
-    developer: new Model()
+  res.render('student/create', {
+    students: req.app.locals.students.query,
+    student: new Model()
   })
 })
 
@@ -55,8 +44,8 @@ api.get('/delete/:id', (req, res) => {
   const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
-  res.render('developer/delete', {
-    developer: item
+  res.render('student/delete', {
+    student: item
   })
 })
 
@@ -66,8 +55,8 @@ api.get('/details/:id', (req, res) => {
   const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
-  res.render('developer/details', {
-    developer: item
+  res.render('student/details', {
+    student: item
   })
 })
 
@@ -77,44 +66,44 @@ api.get('/edit/:id', (req, res) => {
   const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
-  res.render('developer/edit', {
-    developer: item
+  res.render('student/edit', {
+    student: item
   })
 })
 
-// // HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
+// HANDLE EXECUTE DATA MODIFICATION REQUESTS --------------------------------------------
 
-// // POST new
-// api.post('/save', (req, res) => {
-//   console.info(`Handling POST ${req}`)
-//   console.debug(JSON.stringify(req.body))
-//   const item = new Model()
-//   console.info(`NEW ID ${req.body._id}`)
-//   item._id = parseInt(req.body._id)
-//   item.email = req.body.email
-//   item.given = req.body.given
-//   item.family = req.body.family
-//   item.city = req.body.city
-//   item.state = req.body.state
-//   item.zip = req.body.zip
-//   item.country = req.body.country
-//   res.send(`THIS FUNCTION WILL SAVE A NEW developer ${JSON.stringify(item)}`)
-// })
+// POST new
+api.post('/save', (req, res) => {
+  console.info(`Handling POST ${req}`)
+  console.debug(JSON.stringify(req.body))
+  const item = new Model()
+  console.info(`NEW ID ${req.body._id}`)
+  item._id = parseInt(req.body._id)
+  item.email = req.body.email
+  item.given = req.body.given
+  item.family = req.body.family
+  item.city = req.body.city
+  item.state = req.body.state
+  item.zip = req.body.zip
+  item.country = req.body.country
+  res.send(`THIS FUNCTION WILL SAVE A NEW student ${JSON.stringify(item)}`)
+})
 
-// // POST update with id
-// api.post('/save/:id', (req, res) => {
-//   console.info(`Handling SAVE request ${req}`)
-//   const id = parseInt(req.params.id)
-//   console.info(`Handling SAVING ID=${id}`)
-//   res.send(`THIS FUNCTION WILL SAVE CHANGES TO AN EXISTING developer with id=${id}`)
-// })
+// POST update with id
+api.post('/save/:id', (req, res) => {
+  console.info(`Handling SAVE request ${req}`)
+  const id = parseInt(req.params.id)
+  console.info(`Handling SAVING ID=${id}`)
+  res.send(`THIS FUNCTION WILL SAVE CHANGES TO AN EXISTING student with id=${id}`)
+})
 
-// // DELETE id (uses HTML5 form method POST)
-// api.post('/delete/:id', (req, res) => {
-//   console.info(`Handling DELETE request ${req}`)
-//   const id = parseInt(req.params.id)
-//   console.info(`Handling REMOVING ID=${id}`)
-//   res.send(`THIS FUNCTION WILL DELETE FOREVER THE EXISTING developer with id=${id}`)
-// })
+// DELETE id (uses HTML5 form method POST)
+api.post('/delete/:id', (req, res) => {
+  console.info(`Handling DELETE request ${req}`)
+  const id = parseInt(req.params.id)
+  console.info(`Handling REMOVING ID=${id}`)
+  res.send(`THIS FUNCTION WILL DELETE FOREVER THE EXISTING student with id=${id}`)
+})
 
 module.exports = api
