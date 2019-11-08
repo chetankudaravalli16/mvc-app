@@ -3,7 +3,8 @@
 *  Describes the characteristics of each attribute in a developer resource.
 *
 * @author Denise Case <denisecase@gmail.com>
-* @requires mongoose
+* @requires mongoose  x\
+
 *
 */
 const mongoose = require('mongoose')
