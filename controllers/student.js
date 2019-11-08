@@ -3,7 +3,7 @@
 *  Handles requests related to developer resources.
 *
 * 
-* @author Suma Soma <s537239@nwmissouri.edu>
+* @author Pranay Allikanti <s536880@nwmissouri.edu>
 *
 */
 const express = require('express')

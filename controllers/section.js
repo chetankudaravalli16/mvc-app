@@ -2,7 +2,7 @@
 *  Developer controller
 *  Handles requests related to developer resources.
 *
-* @author SaiPrasad Bobbilla
+* @author Pavan Sai Kumar Reddy Kamjula
 *
 */
 const express = require('express')
