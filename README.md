@@ -10,4 +10,4 @@ Group -05
 
 ![](Capture.PNG)
 
-Repo Link : https://github.com/pavanreddy4227/mvc-app
+Repo Link : https://github.com/chetankudaravalli16/mvc-app
