@@ -1,18 +1,25 @@
+/**
+*  Course controller
+*  Handles requests related to course resources.
+*
+* @author Sumanth Gorantla <gorantlasumanth96@gmail.com>
+*
+*/
 const express = require('express')
 const api = express.Router()
-
+const CourseModel = require('../models/course.js')
 const find = require('lodash.find')
 
 const notfoundstring = 'Could not find student with id='
 
-api.get('/findallstudents', (req, res) => {
+api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
-  const data = req.app.locals.students.query
+  const data = req.app.locals.courses.query
   res.send(JSON.stringify(data))
 })
 
 
-api.get('/findonecourse/:id', (req, res) => {
+api.get('/findone/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.courses.query
@@ -33,7 +40,7 @@ api.get('/', (req, res) => {
 api.get('/create', (req, res) => {
   res.render('course/create', {
     courses: req.app.locals.courses.query,
-    course: new Model()
+    course: new CourseModel()
   })
 })
 
@@ -76,16 +83,15 @@ api.get('/edit/:id', (req, res) => {
 api.post('/save', (req, res) => {
   console.info(`Handling POST ${req}`)
   console.debug(JSON.stringify(req.body))
-//   const item = new Model()
-//   console.info(`NEW ID ${req.body._id}`)
-//   item._id = parseInt(req.body._id)
-//   item.email = req.body.email
-//   item.given = req.body.given
-//   item.family = req.body.family
-//   item.city = req.body.city
-//   item.state = req.body.state
-//   item.zip = req.body.zip
-//   item.country = req.body.country
+  const item = new CourseModel()
+  console.info(`NEW ID ${req.body._id}`)
+  item._id = parseInt(req.body._id)
+  item.SchoolNumber = req.body.SchoolNumber
+  item.CourseNumber = req.body.CourseNumber
+  item.Name = req.body.Name
+  item.inSpring = req.body.inSpring
+  item.inSummer = req.body.inSummer
+  item.inFall = req.body.inFall
   res.send(`THIS FUNCTION WILL SAVE A NEW course ${JSON.stringify(item)}`)
 })
 
@@ -96,7 +102,7 @@ api.post('/save/:id', (req, res) => {
   console.info(`Handling SAVING ID=${id}`)
   res.send(`THIS FUNCTION WILL SAVE CHANGES TO AN EXISTING course with id=${id}`)
 })
-
+  
 // DELETE id (uses HTML5 form method POST)
 api.post('/delete/:id', (req, res) => {
   console.info(`Handling DELETE request ${req}`)

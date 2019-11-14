@@ -1,19 +1,25 @@
-
+/**
+*  Student controller
+*  Handles requests related to student resources.
+*
+* @author Santhosh Kumar Bollena <bollenasanthosh@gmail.com>
+*
+*/
 const express = require('express')
 const api = express.Router()
-
+const StudentModel = require('../models/student.js')
 const find = require('lodash.find')
 
 const notfoundstring = 'Could not find student with id='
 
-api.get('/findallstudents', (req, res) => {
+api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.students.query
   res.send(JSON.stringify(data))
 })
 
 
-api.get('/findonestudent/:id', (req, res) => {
+api.get('/findone/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.students.query
@@ -32,10 +38,12 @@ api.get('/', (req, res) => {
 
 // GET create
 api.get('/create', (req, res) => {
-  res.render('student/create', {
+  console.log("student")
+  res.render('../views/student/create', {
     students: req.app.locals.students.query,
-    student: new Model()
+    student: new StudentModel()
   })
+  
 })
 
 // GET /delete/:id
@@ -77,17 +85,18 @@ api.get('/edit/:id', (req, res) => {
 api.post('/save', (req, res) => {
   console.info(`Handling POST ${req}`)
   console.debug(JSON.stringify(req.body))
-  const item = new Model()
+  const student = new StudentModel()
   console.info(`NEW ID ${req.body._id}`)
-  item._id = parseInt(req.body._id)
-  item.email = req.body.email
-  item.given = req.body.given
-  item.family = req.body.family
-  item.city = req.body.city
-  item.state = req.body.state
-  item.zip = req.body.zip
-  item.country = req.body.country
-  res.send(`THIS FUNCTION WILL SAVE A NEW student ${JSON.stringify(item)}`)
+  student._id = Number(req.body._id)
+  student.Given = req.body.Given
+  student.Family = req.body.Family
+  student.Email = req.body.Email
+  student.GPA = Number(req.body.GPA)
+  student.GitHub = req.body.GitHub
+  student.Website=req.body.Website
+  student.SectionId = Number(req.body.SectionId)
+ 
+  res.send(`THIS FUNCTION WILL SAVE A NEW student `)
 })
 
 // POST update with id
