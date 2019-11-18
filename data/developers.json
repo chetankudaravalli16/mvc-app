@@ -10,6 +10,54 @@
     "country": "USA",
     "URL": "https://www.nwmissouri.edu/csis/directory/case.htm"
   },
+
+  {
+    "_id": 91,
+    "email": "chetan@nwmissouri.edu",
+    "given": "chetan",
+    "family": "kudaravalli",
+    "city": "Maryville",
+    "state": "MO",
+    "zip": 64468,
+    "country": "USA",
+    "URL": "https://www.nwmissouri.edu/csis/directory"
+  },
+
+  {
+    "_id": 92,
+    "email": "pavan@nwmissouri.edu",
+    "given": "pavan",
+    "family": "reddy",
+    "city": "Maryville",
+    "state": "MO",
+    "zip": 64468,
+    "country": "USA",
+    "URL": "https://www.nwmissouri.edu/csis/directory"
+  },
+
+  {
+    "_id": 93,
+    "email": "pranay@nwmissouri.edu",
+    "given": "pranay",
+    "family": "allikanti",
+    "city": "Maryville",
+    "state": "MO",
+    "zip": 64468,
+    "country": "USA",
+    "URL": "https://www.nwmissouri.edu/csis/directory"
+  },
+
+  {
+    "_id": 122,
+    "email": "michael@nwmissouri.edu",
+    "given": "Michael",
+    "family": "Case",
+    "city": "Rogers",
+    "state": "MO",
+    "zip": 64468,
+    "country": "USA",
+    "URL": "https://www.nwmissouri.edu/csis/directory/rogers.htm"
+  },
   {
     "_id": 100,
     "email": "michael@nwmissouri.edu",

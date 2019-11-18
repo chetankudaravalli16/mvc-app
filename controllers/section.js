@@ -2,7 +2,7 @@
 *  Section Section
 *  Handles requests related to Section resources.
 *
-* @author Manideep chamala <manideepchamala@gmail.com>
+* @author  pranay allikanti
 *
 */
 const express = require('express')

@@ -12,7 +12,7 @@ const router = express.Router()
 
 // Manage top-level request first
 router.get('/', (req, res, next) => {
-   res.sendFile('index.html')
+  return res.render('index.html')
   
 })
 

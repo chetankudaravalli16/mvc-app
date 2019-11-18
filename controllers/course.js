@@ -2,7 +2,7 @@
 *  Course controller
 *  Handles requests related to course resources.
 *
-* @author Sumanth Gorantla <gorantlasumanth96@gmail.com>
+* @author pavan kumar 
 *
 */
 const express = require('express')
