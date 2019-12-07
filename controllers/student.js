@@ -2,7 +2,7 @@
 *  Student controller
 *  Handles requests related to student resources.
 *
-* @author Pranay allikanti
+* @author Deepak Malempati <s537238@nwmissouri.edu>
 *
 */
 const express = require('express')

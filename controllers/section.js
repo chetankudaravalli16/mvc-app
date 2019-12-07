@@ -2,7 +2,7 @@
 *  Section controller
 *  Handles requests related to section resources.
 *
-* @author pavan sai kumar
+* @author Chaitanya Popuri <s536803@nwmissouri.edu>
 *
 */
 const express = require('express')
