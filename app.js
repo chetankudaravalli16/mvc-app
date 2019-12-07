@@ -34,20 +34,24 @@ LOG.info('Environment variables loaded into process.env.')
 
 // log port (Heroku issue)
 const port = process.env.PORT || 8089
-LOG.info(`Running on ${port}`)
+
+LOG.info(`Running on ${port}`)   
 
 // Are we in production or development?
 const isProduction = process.env.NODE_ENV === 'production'
+
 LOG.info(`Environment isProduction = ${isProduction}`)
 
 // choose the connection
 const dbURI = isProduction ? encodeURI(process.env.ATLAS_URI) : encodeURI(process.env.LOCAL_MONGODB_URI)
+
 LOG.info('MongoDB URL = ' + dbURI)
 
 // get dbName
 const DB_NAME = process.env.DB_NAME
 
 // set connection options
+
 const connectionOptions = {
   dbName: DB_NAME,
   useNewUrlParser: true,
@@ -74,6 +78,7 @@ const db = mongoose.connect(dbURI, connectionOptions, (err, client) => {
 const connection = mongoose.connection
 
 function seed (collectionName) {
+  
   LOG.info(`Seeding collection = ${collectionName}`)
   connection.db.collection(collectionName, (err, c) => {
     c.countDocuments((err, count) => {
