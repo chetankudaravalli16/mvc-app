@@ -1,11 +1,4 @@
-/**
-*  Student model
-*  Describes the characteristics of each attribute in a Student resource.
-*
-* @author Deepak Malempati <s537238@nwmissouri.edu>
-* @requires mongoose
-*
-*/
+
 const mongoose = require('mongoose')
 
 const StudentSchema = new mongoose.Schema({
