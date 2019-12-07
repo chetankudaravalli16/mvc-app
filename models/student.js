@@ -14,46 +14,46 @@ const StudentSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    given: {
+    Given: {
         type: String,
         minlength: 3,
         maxlength: 100,
         required: true
     },
-    family: {
+    Family: {
         type: String,
         minlength: 3,
         maxlength: 100,
         required: true
     },
-    email: {
+    Email: {
         type: String,
         minlength: 5,
         maxlength: 100,
         required: true,
         unique: true
     },
-    gpa: {
+    GPA: {
         type: Number,
         minimum: 0,
         maximum: 4,
         required: true,
         default: '0.0'
     },
-    github: {
+    Github: {
         type: String,
         minlength: 2,
         maxlength: 100,
         required: true,
         unique: true
     },
-    website: {
+    Website: {
         type: String,
         minlength: 5,
         maxlength: 100,
         unique: true
     },
-    sectionId: {
+    SectionId: {
         type: Number,
         required: true
     }
