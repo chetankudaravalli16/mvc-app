@@ -10,10 +10,12 @@
 const express = require('express')
 
 console.log('START routing')
+
 const router = express.Router()
 
 // Manage top-level request first
 router.get('/', (req, res, next) => {
+
   res.render('index', { title: 'MVC' })
 })
 
@@ -27,6 +29,7 @@ router.use('/course', require('../controllers/course.js'))
 
 // Manage top-level request first
 router.get('/course', (req, res, next) => {
+  
   // res.sendFile('index.html')
   res.render('index')
 })
