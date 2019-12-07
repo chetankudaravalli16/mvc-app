@@ -17,6 +17,7 @@ const notfoundstring = 'Could not find student with id='
 api.get('/findall', (req, res) => {
   LOG.info(`Handling /findall ${req}`)
   StudentModal.find({}, (err, data) => {
+
     if (err) { return res.end('Error finding all') }
     res.json(data)
   })
@@ -25,6 +26,7 @@ api.get('/findall', (req, res) => {
 // GET one JSON by ID
 api.get('/findone/:id', (req, res) => {
   LOG.info(`Handling /findone ${req}`)
+
   const id = parseInt(req.params.id)
   StudentModal.find({ _id: id }, (err, results) => {
     if (err) { return res.end(`notfoundstring ${id}`) }
@@ -36,6 +38,7 @@ api.get('/findone/:id', (req, res) => {
 
 // GET to this controller base URI (the default)
 api.get('/', (req, res) => {
+  
   LOG.info(`Handling GET / ${req}`)
   StudentModal.find({}, (err, data) => {
     if (err) { return res.end('Error') }
