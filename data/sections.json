@@ -8,6 +8,7 @@
       "InstructorId": "167",
       "CourseId": "44563"
     },
+
     {
         "_id": 12,
         "SectionNumber":"02",
@@ -17,6 +18,7 @@
         "InstructorId": "167",
         "CourseId":"44563"
       },
+
       {
         "_id": 13,
         "SectionNumber": "04",
@@ -26,6 +28,7 @@
         "InstructorId": "134",
         "CourseId": "44563"
       },
+
       {
         "_id": 14,
         "SectionNumber": "01",
@@ -35,6 +38,7 @@
         "InstructorId": "134",
         "CourseId": "44542"
       },
+
       {
         "_id": 15,
         "SectionNumber": "02",
@@ -44,6 +48,7 @@
         "InstructorId": "134",
         "CourseId": "44542"
       },
+
       {
         "_id": 6,
         "SectionNumber": "01",
@@ -53,6 +58,7 @@
         "InstructorId": "123",
         "CourseId": "44560"
       },
+      
       {
         "_id": 7,
         "SectionNumber": "02",
@@ -62,6 +68,7 @@
         "InstructorId": "123",
         "CourseId": "44560"
       },
+
       {
         "_id": 18,
         "SectionNumber": "03",
