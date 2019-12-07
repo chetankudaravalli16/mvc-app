@@ -6,6 +6,7 @@ const SectionSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  
   SectionNumber: {
     type: String,
     minlength: 1,
@@ -13,6 +14,7 @@ const SectionSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+
   Days: {
     type: String,
     minlength: 1,
@@ -20,6 +22,7 @@ const SectionSchema = new mongoose.Schema({
     required: false,
     default: 'Given name'
   },
+
   StartTime: {
     type: String,
     minlength: 1,
@@ -27,6 +30,7 @@ const SectionSchema = new mongoose.Schema({
     required: false,
     default: 'Family name'
   },
+
   RoomNumber: {
     type: String,
     minlength: 1,
@@ -34,6 +38,7 @@ const SectionSchema = new mongoose.Schema({
     required: true,
     default: 'Maryville'
   },
+
   InstructorID: {
     type: String,
     minlength:1,
@@ -41,6 +46,7 @@ const SectionSchema = new mongoose.Schema({
     required: true,
     default: 'MO'
   },
+
   CourseID: {
     type: String,
     minlength: 1,
