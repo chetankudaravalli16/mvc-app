@@ -2,7 +2,7 @@
 *  Section controller
 *  Handles requests related to section resources.
 *
-* @author Chaitanya Popuri <s536803@nwmissouri.edu>
+* @author pavan 
 *
 */
 const express = require('express')
@@ -15,6 +15,7 @@ const notfoundstring = 'Could not find section with id='
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
+
 api.get('/findall', (req, res) => {
   LOG.info(`Handling /findall ${req}`)
   SectionSchema.find({}, (err, data) => {
@@ -36,6 +37,7 @@ api.get('/findone/:id', (req, res) => {
 // RESPOND WITH VIEWS  --------------------------------------------
 
 // GET /
+
 api.get('/', (req, res) => {
   LOG.info(`Handling GET / ${req}`)
   SectionSchema.find({}, (err, data) => {
